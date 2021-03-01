@@ -8,9 +8,7 @@
                 
             </b-col>
             <b-col cols="2">
-              <div class="icon">
-                 <b-icon icon="search" style="width: 20px; height: 20px;"></b-icon>
-              </div>
+                <h6>O</h6>
             </b-col>
         </b-row>
 
@@ -18,10 +16,10 @@
         <div>
             <b-form-group
             id="fieldset-1"
-            label="Created:"
+            label="Agent:"
             label-for="input-1"
             >
-            <b-form-select id="input-1" :options= "dateCreated"></b-form-select>
+            <b-form-select id="input-1" :options= "agents"></b-form-select>
             </b-form-group>
         </div>
     <!-- select tag end -->
@@ -40,10 +38,10 @@
         <div>
             <b-form-group
             id="fieldset-3"
-            label="Region:"
+            label="Resolution due by:"
             label-for="input-3"
             >
-            <b-form-select id="input-3" :options= "region"></b-form-select>
+            <b-form-select id="input-3" :options= "dueDates"></b-form-select>
             </b-form-group>
         </div>
     <!-- select tag end -->
@@ -51,14 +49,24 @@
         <div>
             <b-form-group
             id="fieldset-4"
-            label="Created By:"
+            label="Created:"
             label-for="input-4"
             >
-            <b-form-select id="input-4" :options= "agents"></b-form-select>
+            <b-form-select id="input-4" :options= "dateCreated"></b-form-select>
             </b-form-group>
         </div>
     <!-- select tag end -->
-   
+    <!-- select tag start -->
+        <div>
+            <b-form-group
+            id="fieldset-5"
+            label="Next response due by:"
+            label-for="input-5"
+            >
+            <b-form-select id="input-5" :options= "dueDates"></b-form-select>
+            </b-form-group>
+        </div>
+    <!-- select tag end -->
     </div>
 </template>
 <script>
@@ -78,11 +86,10 @@ export default {
           { value: 'a', text: 'group 2' },
           { value: 'b', text: 'group 3' }
         ],
-        region: [
-          { value: null, text: 'Harare-Warren Park' },
-          { value: null, text: 'Harare-Southerton' },
-          { value: 'a', text: 'Gweru' },
-          { value: 'b', text: 'Rusape' }
+        dueDates: [
+          { value: null, text: 'Today' },
+          { value: 'a', text: 'This week' },
+          { value: 'b', text: 'this month' }
         ],
          dateCreated: [
           { value: null, text: 'Today' },
@@ -99,5 +106,4 @@ export default {
         border-left: 1px solid #ccc;
         text-align: left;
     }
-    
 </style>

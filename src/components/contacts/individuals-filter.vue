@@ -8,9 +8,7 @@
                 
             </b-col>
             <b-col cols="2">
-              <div class="icon">
-                 <b-icon icon="search" style="width: 20px; height: 20px;"></b-icon>
-              </div>
+                <h6>O</h6>
             </b-col>
         </b-row>
 
@@ -40,10 +38,10 @@
         <div>
             <b-form-group
             id="fieldset-3"
-            label="Region:"
+            label="Company:"
             label-for="input-3"
             >
-            <b-form-select id="input-3" :options= "region"></b-form-select>
+            <b-form-select id="input-3" :options= "companies"></b-form-select>
             </b-form-group>
         </div>
     <!-- select tag end -->
@@ -78,11 +76,10 @@ export default {
           { value: 'a', text: 'group 2' },
           { value: 'b', text: 'group 3' }
         ],
-        region: [
-          { value: null, text: 'Harare-Warren Park' },
-          { value: null, text: 'Harare-Southerton' },
-          { value: 'a', text: 'Gweru' },
-          { value: 'b', text: 'Rusape' }
+        companies: [
+          { value: null, text: 'ZETDC' },
+          { value: 'a', text: 'DELTA' },
+          { value: 'b', text: 'CYBREX' }
         ],
          dateCreated: [
           { value: null, text: 'Today' },
@@ -99,5 +96,4 @@ export default {
         border-left: 1px solid #ccc;
         text-align: left;
     }
-    
 </style>

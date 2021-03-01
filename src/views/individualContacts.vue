@@ -36,6 +36,7 @@
 <individual/>
    </b-col>
    <b-col>
+     <filters />
    </b-col>
 </b-row>
 </div>
@@ -43,10 +44,13 @@
 
 <script>
 import individual from "@/components/contacts/individuals.vue";
+import filters from "@/components/contacts/individuals-filter.vue";
+
 export default {
   name:"comContacts",
   components:{
-  individual
+  individual,
+  filters
   }
 }
 </script>
