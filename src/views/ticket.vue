@@ -30,6 +30,7 @@
     <tick/> 
   </b-col>
   <b-col>
+    <tfilter />
   </b-col>
 </b-row>
 </div>
@@ -38,10 +39,12 @@
 <script>
 
 import tick from "@/components/tickets/ticket1.vue";
+import tfilter from "@/components/tickets/ticket-filter.vue";
 export default {
     name:"ticket",
     components:{
-        tick
+        tick,
+        tfilter
     }
 }
 </script>
