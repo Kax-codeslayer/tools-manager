@@ -16,7 +16,7 @@
     </b-col>
     <b-col cols="5"> 
         <b-badge variant="success">Success</b-badge>
-        <h6 >My vehicle has been offline for 6 days</h6>
+        <h6 ><router-link to="ticketsolve" id="my-nav-dropdown" >Vehicle offline</router-link></h6>
         <p>Kax kakomo .<small>Created 2 days ago</small> .<small>Due in 2 days</small></p>
     </b-col>
     </b-row>
