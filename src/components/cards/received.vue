@@ -1,0 +1,16 @@
+<template>
+     <b-card
+    border-variant="info"
+    tag="article"
+    class="mb-2"
+    id="rc"
+  >
+<p>
+Received</p>    
+  </b-card>
+</template>
+<style>
+#rc:hover{
+ color: thistle;
+}
+</style>

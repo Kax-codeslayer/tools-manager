@@ -1,0 +1,38 @@
+<template>
+ <b-card-text class="ticket-card">
+  <b-row  align-v="center">
+   <b-col cols="1">
+      <b-form-checkbox
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+    >
+    </b-form-checkbox>            
+  </b-col>
+    <b-col cols="1"> 
+        <h2> <b-badge>K</b-badge></h2>
+    </b-col>
+    <b-col cols="5"> 
+        <b-badge variant="success">Success</b-badge>
+        <h6 >My vehicle has been offline for 6 days</h6>
+        <p>Kax kakomo .<small>Created 2 days ago</small> .<small>Due in 2 days</small></p>
+    </b-col>
+    </b-row>
+  </b-card-text>     
+</template>
+<style>
+.ticket-card{
+  border: limegreen 1px solid;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: white;
+  margin-right: 1rem;
+
+}
+#checkbox-1{
+  margin-top: 8rem!important;
+
+}
+</style>
