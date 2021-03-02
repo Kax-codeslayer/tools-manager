@@ -3,11 +3,7 @@
     <b-row>
   <b-nav  align="center">
     <b-col cols="1">
-<b-icon icon="person-square" variant="light" >
-  
-  
-  
-</b-icon> 
+<b-icon icon="person-square" variant="light" ></b-icon> 
 </b-col>
 <b-col>
     <b-nav-item-dropdown
