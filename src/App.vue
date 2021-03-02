@@ -6,17 +6,17 @@
     </div>
       <b-row>
       <b-col cols="1.7">
-        <supportside/> 
+        <div class="sidebar">
+          <supportside/> 
+        </div>
     </b-col>
      <b-col >
        <div class="main">
          <router-view />
        </div>
     </b-col>
-
       </b-row>
   </div>
-  
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
 <style>
 #app{
   background-color: rgba(247, 247, 247, 0.89);
- overflow: hidden;
+  overflow: hidden;
 
 }
 #nav{
@@ -49,6 +49,8 @@ export default {
 .main{
   height: calc(100vh - 100px);
   overflow: scroll;
- 
 }
+
+
+
 </style>

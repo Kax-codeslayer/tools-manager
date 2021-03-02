@@ -1,58 +1,71 @@
 <template>
+   <div id ="inner" >  
+      <b-row class="mb-1 sidelink">
+        <b-col cols="12" sm="12" class="p-3 "><router-link to="/" class ="iterms"> <b-icon icon="card-checklist"></b-icon> Dashboard</router-link></b-col> 
+      </b-row>
+      <b-row class="mb-1 sidelink">
+        <b-col cols="12" sm="12" class="p-3 "><router-link to="./ticket" class ="iterms"> <b-icon icon="journals"></b-icon>    Tickets</router-link></b-col> 
+      </b-row>
+      <b-row class="mb-2 sidelink">
+          <b-col>
+            <b-input-group>
+              <template #prepend>
+              <b-icon class="ico" icon="person-square" variant="light" ></b-icon> 
+              </template>
 
-        <b-col cols="1.7" id ="inner" >
-      
-      
-      <b-row class="mb-1">
-        <b-col cols="12" sm="12" class="p-3 "><link1/></b-col>
-        
+              <b-dropdown
+              id="my-nav-dropdown"
+              text="Contacts"
+              color="black"
+              variant="none"
+              right
+            >
+              <b-dropdown-item> <router-link to="individualContacts" id="my-nav-dropdown" >Individuals</router-link></b-dropdown-item>
+              <b-dropdown-divider></b-dropdown-divider>
+              <b-dropdown-item><router-link to="comContacts" id="my-nav-dropdown">Companies</router-link></b-dropdown-item>     
+            </b-dropdown>
+            </b-input-group>
+          </b-col>      
       </b-row>
-      
-      <b-row class="mb-1">
-        <b-col cols="12" sm="12" class="p-3 "> <link2/></b-col>
-        
+          <b-row class="mb-1 sidelink">
+        <b-col cols="12" sm="12" class="p-3 ">  <router-link to="/" class ="iterms"> <b-icon icon="server"></b-icon> Report</router-link></b-col> 
       </b-row>
-      <b-row class="mb-1">
-        <b-col cols="12" sm="12" class="p-3 ">  <link3/></b-col>
-        
-      </b-row>
-      <b-row class="mb-1">
-        <b-col cols="12" sm="12" class="p-3 "><link4/></b-col>
-        
-      </b-row>
-
-
-<b-row class="mb-2">
-        <b-col cols="12" sm="12" class="p-3 "><link5/></b-col>
-        
-      </b-row>
-    </b-col>
-    
+      <b-row class="mb-1 sidelink">
+        <b-col cols="12" sm="12" class="p-3 ">
+           <router-link to="/" class ="iterms"> <b-icon icon="person-bounding-box"></b-icon>    Admin</router-link></b-col>
+      </b-row>  
+    </div>
 </template>
 <script>
-import link1 from "@/components/links/dashboard.vue";
-import link2 from "@/components/links/tickets.vue";
-import link3 from "@/components/links/contact.vue";
-import link4 from "@/components/links/reports.vue";
-import link5 from "@/components/links/admin.vue";
-
 export default {
-    name:"sidebar",
-    components: {
-    link1,
-    link2,
-    link3,
-    link4,
-    link5
- 
-  }
-    
+
 }
 </script>
 <style>
 #inner{
   background-color:rgb(9, 9, 82) !important;
-  margin-left: 0.1in;
+  padding-left: 2rem;
   height: calc(100vh - 100px);
+  text-align: left;
+  color:#ffff;
+  box-shadow: 4px 0px #f7f7f7;
 }
+.ico{
+  margin-top: .6rem;
+}
+
+a{
+  color:#ffff;
+ text-decoration: unset;
+}
+#my-nav-dropdown__BV_toggle_{
+  color:#ffff  !important;
+}
+.sidelink{
+  border-bottom: solid 1px #fff;
+}
+a #my-nav-dropdown{
+    color:black;
+}
+
 </style>
