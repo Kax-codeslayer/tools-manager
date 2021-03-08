@@ -27,21 +27,25 @@
 </div>
 <b-row>
   <b-col cols="9">
-    <tick/> 
+    <tick/>
+    <tick2/>
+    <tick/>
   </b-col>
   <b-col>
+    
   </b-col>
 </b-row>
 </div>
     
 </template>
 <script>
-
+import tick2 from "@/components/tickets/ticket2.vue";
 import tick from "@/components/tickets/ticket1.vue";
 export default {
     name:"ticket",
     components:{
-        tick
+        tick,
+        tick2
     }
 }
 </script>

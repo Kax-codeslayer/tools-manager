@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import loginPage from "../views/login-form.vue";
 import tickets from "../views/ticketsolve.vue";
+import reports from "../views/report.vue";
+import helpDeskInDepth from "../views/HelpDeskInDepth.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -16,11 +18,22 @@ const routes = [
     name: "loginPage",
     component:loginPage
   },
+   {
+    path: "/report",
+    name: "report",
+    component:reports
+  },
 
   {
     path: "/ticketsolve",
     name: "ticketsolve",
     component:tickets
+  },
+
+  {
+    path: "/HelpDeskInDepth",
+    name: "HelpDeskInDepth",
+    component:helpDeskInDepth
   },
   {
     path: "/comContacts",

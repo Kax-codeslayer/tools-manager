@@ -42,7 +42,7 @@ export default {
 
 }
 #nav{
-  background-color: rgb(9, 9, 82);
+  background-color: rgb(36, 36, 77);
   height: 100px;
   
 }

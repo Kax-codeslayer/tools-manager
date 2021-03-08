@@ -51,7 +51,7 @@ export default {
 </script>
 <style>
 #inner{
-  background-color:rgb(9, 9, 82) !important;
+  background-color: rgb(36, 36, 77) !important;
   margin-left: 0.1in;
   height: calc(100vh - 100px);
 }
