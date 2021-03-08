@@ -3,16 +3,17 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import loginPage from "../views/login-form.vue";
 import tickets from "../views/ticketsolve.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home
   },
   {
-    path: "/loginPge",
+    path: "/",
     name: "loginPage",
     component:loginPage
   },

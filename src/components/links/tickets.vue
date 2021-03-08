@@ -8,10 +8,7 @@
 </div>
 </template>
 <style>
-
 .iterms{
   color: white!important;
 }
-
-
 </style>

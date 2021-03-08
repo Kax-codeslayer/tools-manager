@@ -1,7 +1,7 @@
 <template>
    <div id ="inner" >  
       <b-row class="mb-1 sidelink">
-        <b-col cols="12" sm="12" class="p-3 "><router-link to="/" class ="iterms"> <b-icon icon="card-checklist"></b-icon> Dashboard</router-link></b-col> 
+        <b-col cols="12" sm="12" class="p-3 "><router-link to="/home" class ="iterms"> <b-icon icon="card-checklist"></b-icon> Dashboard</router-link></b-col> 
       </b-row>
       <b-row class="mb-1 sidelink">
         <b-col cols="12" sm="12" class="p-3 "><router-link to="./ticket" class ="iterms"> <b-icon icon="journals"></b-icon>    Tickets</router-link></b-col> 
@@ -30,10 +30,6 @@
           <b-row class="mb-1 sidelink">
         <b-col cols="12" sm="12" class="p-3 ">  <router-link to="/" class ="iterms"> <b-icon icon="server"></b-icon> Report</router-link></b-col> 
       </b-row>
-      <b-row class="mb-1 sidelink">
-        <b-col cols="12" sm="12" class="p-3 ">
-           <router-link to="/" class ="iterms"> <b-icon icon="person-bounding-box"></b-icon>    Admin</router-link></b-col>
-      </b-row>  
     </div>
 </template>
 <script>
@@ -43,7 +39,7 @@ export default {
 </script>
 <style>
 #inner{
-  background-color:rgb(9, 9, 82) !important;
+  background-color:#284255!important;
   padding-left: 2rem;
   height: calc(100vh - 100px);
   text-align: left;

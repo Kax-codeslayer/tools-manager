@@ -1,13 +1,17 @@
 <template>
 
   <div id="app">
-    <div id="nav">
-    <supportnav/>
+    <div class="login-page" v-if="is_logged_in === false">
+      <router-view @log_in= "logIn" />
+    </div>
+    <div class="application" v-if="is_logged_in === true">
+      <div id="nav" >
+       <supportnav />
     </div>
       <b-row>
       <b-col cols="1.7">
         <div class="sidebar">
-          <supportside/> 
+          <supportside /> 
         </div>
     </b-col>
      <b-col >
@@ -16,6 +20,7 @@
        </div>
     </b-col>
       </b-row>
+    </div>
   </div>
 </template>
 
@@ -31,7 +36,18 @@ export default {
     supportnav, 
    supportside
       
+  },
+  data(){
+    return{
+      is_logged_in: false
+    }
+  },
+  methods:{
+    logIn(){
+      this.is_logged_in = true
+    }
   }
+
 }
 </script>
 
@@ -42,7 +58,7 @@ export default {
 
 }
 #nav{
-  background-color: rgb(9, 9, 82);
+  background-color: #284255!important;
   height: 100px;
   
 }
