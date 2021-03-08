@@ -2,10 +2,8 @@
 <div>
   <div id="bar">
   <b-navbar toggleable="sm"  class="nav2">
-    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-      
-       
-<b-navbar-brand>
+    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>     
+  <b-navbar-brand>
     <b-form-checkbox
       id="checkbox-2"
       v-model="status"
@@ -28,8 +26,6 @@
     </b-collapse>
   </b-navbar>
 </div>
-
-
 
  <b-row>
    <b-col cols="9">
