@@ -24,6 +24,7 @@
       <h2>11</h2>
       <p> Created Tickets</p>
 <hr/>
+
       <b-row>
        <b-col cols="2">
 
