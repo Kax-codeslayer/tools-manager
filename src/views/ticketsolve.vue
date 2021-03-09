@@ -11,7 +11,7 @@
 <b-navbar-brand>
    <b-icon star></b-icon>
        </b-navbar-brand>
-    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Reply</b-button></b-navbar-brand>
+    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit"> <b-icon name="flag"></b-icon> Reply</b-button></b-navbar-brand>
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Add-Note</b-button></b-navbar-brand>
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Forward</b-button></b-navbar-brand>
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Close</b-button></b-navbar-brand>
