@@ -2,10 +2,8 @@
 <div>
   <div id="bar">
   <b-navbar toggleable="sm"  class="nav2">
-    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-      
-       
-<b-navbar-brand>
+    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>     
+  <b-navbar-brand>
     <b-form-checkbox
       id="checkbox-2"
       v-model="status"
@@ -29,13 +27,12 @@
   </b-navbar>
 </div>
 
-
-
  <b-row>
    <b-col cols="9">
 <individual/>
    </b-col>
    <b-col>
+     <filters />
    </b-col>
 </b-row>
 </div>
@@ -43,10 +40,13 @@
 
 <script>
 import individual from "@/components/contacts/individuals.vue";
+import filters from "@/components/contacts/individuals-filter.vue";
+
 export default {
   name:"comContacts",
   components:{
-  individual
+  individual,
+  filters
   }
 }
 </script>

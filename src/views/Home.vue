@@ -2,9 +2,6 @@
 
   <div class="home">
   <b-row class="mb-4" id = "info">
-    
-
-     
      
     <supportdisplay/>
     
@@ -14,7 +11,6 @@
   </div>
 
 </template>
-
 <script>
 // @ is an alias to /src
 
@@ -27,10 +23,6 @@ export default {
   name: "Home",
   components: {
     supportdisplay,
-    
-    
-    
-    
     
   }
 };
