@@ -9,6 +9,11 @@
 Received</p>    
   </b-card>
 </template>
+<script>
+export default {
+   props: ['active'],
+}
+</script>
 <style>
 #rc:hover{
  color: thistle;
