@@ -21,8 +21,10 @@
                 </b-col>
                
                 <b-col cols="2">
+                    <router-link to="TicketVolume" class ="iterms">
                     <b-card><b-icon icon="book-half" scale="2" variant="success" ></b-icon>
                     </b-card>
+                     </router-link>
                     <p><small>Ticket Volume Trents</small></p>
                 </b-col>
                 
@@ -39,16 +41,19 @@
         <b-row>
             
             <b-col cols="2">
-
+               <router-link to="AgentPerfomance" class ="iterms">
                  <b-card><b-icon icon="person-lines-fill" scale="2" variant="info" ></b-icon>
                  
                  </b-card>
+                 </router-link>
                  <p><small>Agent Perfomance</small></p>
                 </b-col>
                
                 <b-col cols="2">
+                    <router-link to="GroupPerfomance" class ="iterms">
                     <b-card><b-icon icon="people-fill" scale="2" variant="info" ></b-icon>
                     </b-card>
+                     </router-link>
                     <p><small>Group Perfomance</small></p>
                 </b-col>
                   

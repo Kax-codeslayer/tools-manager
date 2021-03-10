@@ -29,39 +29,51 @@
        <b-col cols="2">
 
          <b-row>
+           <b-col cols="12">
    <h2>0</h2>
+   
    <p>Resolved Tickets </p>
- 
+           </b-col>
          </b-row>
 
          <hr/>
          <b-row>
+           <b-col cols="12">
            <h2>0</h2>
    <p>Unresolved Tickets </p>
+   </b-col>
          </b-row>
          <hr/>
          <b-row>
+           <b-col cols="12">
            <h2>0</h2>
    <p>Reopened Tickets </p>
+   </b-col>
          </b-row>
 <hr/>
           <b-row>
+            <b-col>
            <h2>0min 0sec</h2>
    <p>Average First Response </p>
+   </b-col>
          </b-row>
 <hr/>
           <b-row>
+            <b-col>
            <h2>0min 0sec</h2>
    <p>Average Response Time </p>
+            </b-col>
          </b-row>
 <hr/>
               <b-row>
+                <b-col>
            <h2>0min 0sec</h2>
    <p>Average Resolution Time </p>
+   </b-col>
          </b-row>
          <hr/>
        </b-col>
-        <b-col cols="5">
+        <b-col cols="5" id="graphs">
           <b-row> 
             <h4>Created Tickets Split By Source</h4>
              <bySource/> </b-row> 
@@ -101,5 +113,7 @@ export default {
 }
 #deskdata{
   margin: 20px;
+  
 }
+
 </style>
