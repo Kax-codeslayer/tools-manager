@@ -26,9 +26,10 @@
           <onhold v-else v-on:click.native="selectTab('onhold')" active = "notactive"/>
         </b-col>
         </b-row>
-      <b-row class="mb-2">
+        
+      <b-row class="mb-2  " >
         <!-- tabs start -->
-        <b-col cols="8" sm="8" class="p-3 ">
+        <b-col cols="8" sm="8" class="p-3 " id="trents">
          
           <b-tabs>
             <b-tab title="Trends" v-if="selected_tab === 'trend'" > 
@@ -89,6 +90,7 @@
       </b-container>
         </b-col>
     </b-row>
+    
     <lower/>
   </b-col>
 </template>
@@ -143,7 +145,12 @@ export default {
 }
 </script>
 <style>
+#trents{
+  max-height: 450px;
+  overflow-y: hidden;
+  overflow-y: scroll;
 
+}
 
 
 </style>
