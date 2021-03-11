@@ -5,6 +5,9 @@ import loginPage from "../views/login-form.vue";
 import tickets from "../views/ticketsolve.vue";
 import reports from "../views/report.vue";
 import helpDeskInDepth from "../views/HelpDeskInDepth.vue";
+import ticketvolume from "../views/ticketsVolumeTrents.vue";
+import agentPerfomance from "../views/AgentPerfomance.vue";
+import groupPerfomance from "../views/GroupPerfomance.vue";
 
 Vue.use(VueRouter);
 
@@ -36,6 +39,25 @@ const routes = [
     name: "HelpDeskInDepth",
     component:helpDeskInDepth
   },
+  {
+    path: "/GroupPerfomance",
+    name: "GroupPerfomance",
+    component:groupPerfomance
+  },
+
+  {
+    path: "/AgentPerfomance",
+    name: "AgentPerfomance",
+    component:agentPerfomance
+  },
+
+  {
+    path: "/TicketVolume",
+    name: "TicketVolume",
+    component:ticketvolume
+  },
+
+
   {
     path: "/comContacts",
     name: "comContacts",
