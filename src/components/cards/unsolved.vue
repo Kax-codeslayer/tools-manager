@@ -9,13 +9,20 @@
   >
 <h6> <b-icon icon="exclamation-circle-fill" variant="danger" scale="1.5"></b-icon>    Unsolved </h6>
 <h4>22</h4>
+<hr v-if="active === 'unsolved_active'" class="activebar">
 
-     
-  
   </b-card>
 </template>
+<script>
+export default {
+   props: ['active'],
+}
+</script>
 <style>
 #uns:hover{
   transform: scale(1.1);
+}
+.activebar{
+  background-color:green;
 }
 </style>
