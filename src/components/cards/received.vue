@@ -6,8 +6,7 @@
     id="rc"
   >
 <p>
-Received</p> 
-<h3>100 </h3>   
+Received</p>    
   </b-card>
 </template>
 <script>

@@ -58,13 +58,21 @@
                 </b-col>
                   
                 <b-col cols="2">
-                    <router-link to="PerfomanceAnalysis" class ="iterms">
                     <b-card><b-icon icon="pie-chart-fill" scale="2" variant="info" ></b-icon>
                     </b-card>
-                    </router-link>
                     <p><small>Perfomance Distribution</small></p>
                 </b-col>
-              
+                <b-col cols="2">
+                    <b-card><b-icon icon="view-list" scale="2" variant="info"></b-icon>
+                    </b-card>
+                    <p><small>Time Sheet Summary</small></p>
+                </b-col>
+
+                <b-col cols="2">
+                    <b-card><b-icon icon="arrow-counterclockwise" scale="2" variant="info" ></b-icon>
+                    </b-card>
+                    <p><small>Ticket Life Cycle</small></p>
+                </b-col>
         </b-row>
     </b-card>
 
@@ -72,7 +80,28 @@
 <b-card id="response1" 
     >
 
-        
+        <H3>Helpdesk Analysis</H3>
+        <b-row>
+            
+            <b-col cols="2">
+                
+                 <b-card>  
+                     <b-icon icon="zoom-in" scale="2" variant="success"></b-icon>
+                 
+                 </b-card>
+                 <p><small>Help-Desk in Depth</small></p>
+                </b-col>
+               
+                <b-col cols="2">
+                    <b-card><b-icon icon="book-half" scale="2" variant="success" ></b-icon>
+                    </b-card>
+                    <p><small>Ticket Volume Trents</small></p>
+                </b-col>
+                
+                <b-col>
+                    
+                </b-col>
+        </b-row>
     </b-card>
 
 

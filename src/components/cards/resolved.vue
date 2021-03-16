@@ -6,8 +6,7 @@
     id="rs"
   >
 <p>
-Resolved</p> 
-<h3>99   </h3>
+Resolved</p>    
   </b-card>
 </template>
 <style>
