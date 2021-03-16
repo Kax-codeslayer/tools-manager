@@ -1,25 +1,74 @@
 <template>
   <b-col>
       <b-row class="mb-2 cards">
-        <b-col cols="2" sm="2" class="p-3 "><opencard v-on:click.native="selected_tab = 'unsolved'" /></b-col>
-        <b-col cols="2" sm="2" class="p-3 "><solvedcard v-on:click.native="selectTab('overdue')"/></b-col>
-        <b-col cols="2" sm="2" class="p-3 "><newcard v-on:click.native="selectTab('overdueToday')"/></b-col>
-        <b-col cols="2" sm="2" class="p-3 "> <open v-on:click.native="selectTab('open')"/></b-col>
-        <b-col cols="2" sm="2" class="p-3 "> <unassighned v-on:click.native="selectTab('unsigned')"/></b-col>
-        <b-col cols="2" sm="2" class="p-3 "> <onhold v-on:click.native="selectTab('onhold')"/></b-col>
-      </b-row>
-      <b-row class="mb-2">
+        <b-col cols="2" sm="2" class="p-3 ">
+          <opencard v-if="isactive === 'unsolved'" v-on:click.native="selectTab('unsolved')" active = "unsolved_active"/>
+          <opencard v-else v-on:click.native="selectTab('unsolved')" active = "notactive"/>
+        </b-col>
+        <b-col cols="2" sm="2" class="p-3 ">
+          <solvedcard v-if="isactive === 'overdue'" v-on:click.native="selectTab('overdue')" active = "overdue_active"/>
+          <solvedcard v-else v-on:click.native="selectTab('overdue')" active = "notactive"/>
+        </b-col>
+        <b-col cols="2" sm="2" class="p-3 ">
+          <newcard v-if="isactive === 'overdueToday'" v-on:click.native="selectTab('overdueToday')" active = "dueToday_active" />
+          <newcard v-else v-on:click.native="selectTab('overdueToday')" active = "notactive" />
+        </b-col>
+        <b-col cols="2" sm="2" class="p-3 "> 
+          <open v-if="isactive === 'open'" v-on:click.native="selectTab('open')" active = "open_active"/>
+          <open v-else v-on:click.native="selectTab('open')" active = "notactive" />
+        </b-col>
+        <b-col cols="2" sm="2" class="p-3 ">
+           <unassighned v-if="isactive === 'unsigned'" v-on:click.native="selectTab('unsigned')" active = "unsigned_active"/>
+           <unassighned v-else v-on:click.native="selectTab('unsigned')" active = "notactive"/>
+        </b-col>
+        <b-col cols="2" sm="2" class="p-3 "> 
+          <onhold v-if="isactive === 'onhold'" v-on:click.native="selectTab('onhold')" active = "onhold_active"/>
+          <onhold v-else v-on:click.native="selectTab('onhold')" active = "notactive"/>
+        </b-col>
+        </b-row>
+        
+      <b-row class="mb-2  " >
         <!-- tabs start -->
-        <b-col cols="8" sm="8" class="p-3 ">
+        <b-col cols="8" sm="8" class="p-3 " id="trents">
          
           <b-tabs>
-            <b-tab title="Trends" > <trent/></b-tab>
-            <b-tab  title="Unsolved" v-if="selected_tab === 'unsolved'" active><trent/></b-tab>
-            <b-tab v-if="selected_tab === 'overdue'" title="Overdue" active> <trent/></b-tab>
-            <b-tab v-if="selected_tab === 'overdueToday'" title="Due Today" active> <trent/></b-tab>
-            <b-tab v-if="selected_tab === 'open'" title="Open" active> <trent/></b-tab>
-            <b-tab v-if="selected_tab === 'unsigned'" title="Unsigned" active> <trent/></b-tab>
-            <b-tab v-if="selected_tab === 'onhold'" title="Onhold" active> <trent/></b-tab>
+            <b-tab title="Trends" v-if="selected_tab === 'trend'" > 
+              <trent/>
+            </b-tab>
+            <b-tab  title="Unsolved" v-else-if="selected_tab === 'unsolved'" active>
+               <tick status="Unsolved" />
+               <tick status="Unsolved" />
+               <tick status="Unsolved" />
+            </b-tab>
+            <b-tab v-else-if="selected_tab === 'overdue'" title="Overdue" active>
+               <tick status="Overdue" />
+               <tick status="Overdue" />
+               <tick status="Overdue" />
+            </b-tab>
+            <b-tab v-else-if="selected_tab === 'overdueToday'" title="Due Today" active>
+              <tick status="Due today" />
+              <tick status="Due today" />
+              <tick status="Due today" />
+              <tick status="Due today" />
+            </b-tab>
+            <b-tab v-else-if="selected_tab === 'open'" title="Open" active>
+               <tick status="Open" />
+               <tick status="Open" />
+               <tick status="Open" />
+            </b-tab>
+            <b-tab v-else-if="selected_tab === 'unsigned'" title="Unassigned" active>
+               <tick status="Unsigned" />
+               <tick status="Unsigned" />
+               <tick status="Unsigned" />
+               <tick status="Unsigned" />
+               <tick status="Unsigned" />
+            </b-tab>
+            <b-tab v-else-if="selected_tab === 'onhold'" title="Onhold" active>
+               <tick status="Onhold" />
+               <tick status="Onhold" />
+               <tick status="Onhold" />
+               <tick status="Onhold" />
+            </b-tab>
           </b-tabs>
         </b-col>
         <!-- tabs start -->
@@ -41,6 +90,7 @@
       </b-container>
         </b-col>
     </b-row>
+    
     <lower/>
   </b-col>
 </template>
@@ -56,8 +106,12 @@ import unassighned from "@/components/cards/unassigned.vue";
 import trent from "@/components/cards/Trents.vue";
 import resolved from "@/components/cards/resolved.vue";
 import received from "@/components/cards/received.vue";
+
 import average from "@/components/cards/averageTime.vue";
 import firsttime from "@/components/cards/firsttimeResponse.vue";
+
+import tick from "@/components/tickets/ticket1.vue";
+
 
 
 export default {
@@ -73,23 +127,40 @@ export default {
     resolved,
     received,
     lower,
+
     average,
     firsttime
+
+    tick
+
   },
   data(){
     return{
-      selected_tab:"halla"
+      selected_tab:"trend",
+      isactive:false
     }
   },
   methods:{
     selectTab: function (tab) {
-      this.selected_tab = tab;
+      if(this.selected_tab != tab){
+          this.selected_tab = tab;
+          this.isactive = tab;
+      }else{
+        this.selected_tab = "trend"
+        this.isactive = "trend";
+      }
+      
     }
   }
 }
 </script>
 <style>
+#trents{
+  max-height: 450px;
+  overflow-y: hidden;
+  overflow-y: scroll;
 
+}
 
 
 </style>

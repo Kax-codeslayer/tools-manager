@@ -8,7 +8,11 @@ import router from "./router";
 import store from "./store";
 import { BootstrapVueIcons } from 'bootstrap-vue';
 import VueTableDynamic from 'vue-table-dynamic'
+
 import VueBootstrap4Table from 'vue-bootstrap4-table'
+
+//import { mdbTbl, mdbTblHead, mdbTblBody } from 'mdbvue';
+
 
 Vue.use(VueTableDynamic)
 Vue.use(BootstrapVueIcons)
