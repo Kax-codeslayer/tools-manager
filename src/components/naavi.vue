@@ -8,8 +8,8 @@
 
     <b-collapse id="nav-collapse" is-nav>
        
-      <log1/>
-   
+     <b-icon v-on:click="togleSidebar()" icon="list"></b-icon><log1/>
+
    <alar/>
    <msg/>
 
@@ -78,12 +78,15 @@ export default {
     newt,
     newIndi,
     newCom
-    
-
-
   },
   
+  methods:{
 
+    togleSidebar(){
+      this.$emit('togle-sidebar');
+      console.log('clicked');
+    }
+  }
   
 
 }
