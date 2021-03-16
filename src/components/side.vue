@@ -129,7 +129,7 @@ export default {
     lower,
 
     average,
-    firsttime
+    firsttime,
 
     tick
 

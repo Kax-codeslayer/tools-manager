@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+//import Home from "../views/Home.vue";
 import loginPage from "../views/login-form.vue";
 import tickets from "../views/ticketsolve.vue";
 
