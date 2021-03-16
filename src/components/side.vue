@@ -33,8 +33,8 @@
               <b-col cols="4" sm="6"><received/></b-col>
             </b-row>
             <b-row>
-              <b-col cols="8" sm="6"><resolved/></b-col>
-              <b-col cols="4" sm="6"><received/></b-col>
+              <b-col cols="8" sm="6"><average/></b-col>
+              <b-col cols="4" sm="6"><firsttime/></b-col>
             </b-row>
           </b-col>
         </b-row>
@@ -56,6 +56,8 @@ import unassighned from "@/components/cards/unassigned.vue";
 import trent from "@/components/cards/Trents.vue";
 import resolved from "@/components/cards/resolved.vue";
 import received from "@/components/cards/received.vue";
+import average from "@/components/cards/averageTime.vue";
+import firsttime from "@/components/cards/firsttimeResponse.vue";
 
 
 export default {
@@ -70,7 +72,9 @@ export default {
     onhold,
     resolved,
     received,
-    lower
+    lower,
+    average,
+    firsttime
   },
   data(){
     return{

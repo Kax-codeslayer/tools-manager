@@ -8,10 +8,11 @@ import router from "./router";
 import store from "./store";
 import { BootstrapVueIcons } from 'bootstrap-vue';
 import VueTableDynamic from 'vue-table-dynamic'
-import { mdbTbl, mdbTblHead, mdbTblBody } from 'mdbvue';
+import VueBootstrap4Table from 'vue-bootstrap4-table'
 
 Vue.use(VueTableDynamic)
 Vue.use(BootstrapVueIcons)
+Vue.use(VueBootstrap4Table)
 
 Vue.config.productionTip = false;
 

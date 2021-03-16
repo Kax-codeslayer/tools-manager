@@ -5,9 +5,8 @@
     class="mb-2"
     id="rs"
   >
-<p>
-Resolved</p> 
-<h3>99   </h3>
+<small>Average Response Time </small>
+<h3>5min  </h3>
   </b-card>
 </template>
 <style>

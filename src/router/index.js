@@ -8,6 +8,7 @@ import helpDeskInDepth from "../views/HelpDeskInDepth.vue";
 import ticketvolume from "../views/ticketsVolumeTrents.vue";
 import agentPerfomance from "../views/AgentPerfomance.vue";
 import groupPerfomance from "../views/GroupPerfomance.vue";
+import perfomanceAnalysis from "../views/PerfomanceAnalysis.vue";
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,11 @@ const routes = [
     path: "/GroupPerfomance",
     name: "GroupPerfomance",
     component:groupPerfomance
+  },
+  {
+    path: "/PerfomanceAnalysis",
+    name: "PerfomanceAnalysis",
+    component:perfomanceAnalysis
   },
 
   {
