@@ -56,6 +56,10 @@ a{
   color:#ffff;
  text-decoration: unset;
 }
+a:hover{
+  text-decoration: unset;
+  color: #3432b6;
+}
 #my-nav-dropdown__BV_toggle_{
   color:#ffff  !important;
 }

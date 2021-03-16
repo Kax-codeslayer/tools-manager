@@ -3,10 +3,15 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import loginPage from "../views/login-form.vue";
 import tickets from "../views/ticketsolve.vue";
-import dashBoard from "../views/dashboard.vue";
-import comContacts from "../views/comContacts.vue";
-import individualContacts from "../views/individualContacts.vue";
-import ticket from "../views/ticket.vue";
+
+import reports from "../views/report.vue";
+import helpDeskInDepth from "../views/HelpDeskInDepth.vue";
+import ticketvolume from "../views/ticketsVolumeTrents.vue";
+import agentPerfomance from "../views/AgentPerfomance.vue";
+import groupPerfomance from "../views/GroupPerfomance.vue";
+import perfomanceAnalysis from "../views/PerfomanceAnalysis.vue";
+
+
 
 Vue.use(VueRouter);
 
@@ -17,18 +22,60 @@ const routes = [
     name: "loginPage",
     component:loginPage
   },
-  {
-    path: "/dashboard",
-    name: "dashboard",
-    component: dashBoard,
-    children:[
-      {path: "",component: Home},
-      {path: "ticketsolve",component:tickets},
-      {path: "comContacts",component:comContacts},
-      {path: "individualContacts",component:individualContacts},
-      {path: "ticket",component:ticket},
-    ]
+
+   {
+    path: "/report",
+    name: "report",
+    component:reports
   },
+
+  {
+    path: "/ticketsolve",
+    name: "ticketsolve",
+    component:tickets
+  },
+
+  {
+    path: "/HelpDeskInDepth",
+    name: "HelpDeskInDepth",
+    component:helpDeskInDepth
+  },
+  {
+    path: "/GroupPerfomance",
+    name: "GroupPerfomance",
+    component:groupPerfomance
+  },
+  {
+    path: "/PerfomanceAnalysis",
+    name: "PerfomanceAnalysis",
+    component:perfomanceAnalysis
+  },
+
+  {
+    path: "/AgentPerfomance",
+    name: "AgentPerfomance",
+    component:agentPerfomance
+  },
+
+  {
+    path: "/TicketVolume",
+    name: "TicketVolume",
+    component:ticketvolume
+  },
+
+
+  {
+    path: "/comContacts",
+    name: "comContacts",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/comContacts.vue")
+  },
+
+
+
 ];
 
 const router = new VueRouter({

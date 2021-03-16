@@ -6,8 +6,8 @@
     id="rs"
   >
 <p>
-Resolved</p> 
-<h3>99   </h3>
+<small>First Response Time  </small></p> 
+<h3>22min   </h3>
   </b-card>
 </template>
 <style>

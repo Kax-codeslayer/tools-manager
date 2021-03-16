@@ -8,7 +8,7 @@
 </template>
 <style>
 #msg{
-  padding-left: 2%;
+  padding-left: 0%;
 }
 
 </style>
