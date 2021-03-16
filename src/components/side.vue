@@ -2,8 +2,8 @@
   <b-col>
       <b-row class="mb-2 cards">
         <b-col cols="2" sm="2" class="p-3 ">
-          <opencard v-if="isactive === 'unsolved'" v-on:click.native="selectedTab('unsolved')" active = "unsolved_active"/>
-          <opencard v-else v-on:click.native="selectedTab('unsolved')" active = "notactive"/>
+          <opencard v-if="isactive === 'unsolved'" v-on:click.native="selectTab('unsolved')" active = "unsolved_active"/>
+          <opencard v-else v-on:click.native="selectTab('unsolved')" active = "notactive"/>
         </b-col>
         <b-col cols="2" sm="2" class="p-3 ">
           <solvedcard v-if="isactive === 'overdue'" v-on:click.native="selectTab('overdue')" active = "overdue_active"/>
