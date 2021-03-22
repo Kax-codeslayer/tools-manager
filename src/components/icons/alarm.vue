@@ -15,6 +15,6 @@
 </template>
 <style>
 #alra{
-    margin-left: 40%;
+    margin-left: 39%;
 }
 </style>

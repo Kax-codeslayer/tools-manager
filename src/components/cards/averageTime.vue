@@ -5,7 +5,7 @@
     class="mb-2"
     id="rs"
   >
-<small>Average Response Time </small>
+<small>Avg Response Time </small>
 <h3>5min  </h3>
   </b-card>
 </template>

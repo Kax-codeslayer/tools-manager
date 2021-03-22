@@ -1,7 +1,7 @@
 <template>
     <div class="backg">
         <div class="login-div text-center">
-            <h1>{{user}}</h1>
+            <h3>{{user}}</h3>
     <b-form >
         <div class="inputgroups text-left">
             <label  for="inline-form-input-name">User Name:</label>
@@ -29,7 +29,7 @@
       rember me
     </b-form-checkbox>
     </div>
-        <router-link to="/dashboard" class ="iterms"><b-button  class="searchBtn" variant="primary">login</b-button></router-link>
+        <router-link to="/home" class ="iterms"><b-button  class="searchBtn" variant="primary">login</b-button></router-link>
       <div class="admin"><b-link v-on:click="setAdmin()">Login as {{defaultUser}} </b-link>|<b-link v-on:click="setAgent()" > fogot password</b-link></div>
     </b-form>
   </div>
@@ -39,18 +39,18 @@
 export default {
   data(){
       return {
-          user:"Agent",
+          user:"Tools Manager",
           defaultUser: "Admin"
       }
   },
   methods:{
       setAdmin(){
           this.user = "Admin"
-          if ( this.defaultUser == "Agent") {
+          if ( this.defaultUser == "Tools Manager") {
               this.defaultUser = "Admin"
               this.user = "Log in"
           } else {
-                this.defaultUser = "Agent"
+                this.defaultUser = "Tools Manager"
                 this.user = "Admin"
           }
       },

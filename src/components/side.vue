@@ -29,7 +29,7 @@
         
       <b-row class="mb-2  " >
         <!-- tabs start -->
-        <b-col cols="8" sm="8" class="p-3 " id="trents">
+        <b-col cols="7" sm="8" class="p-3 " id="trents">
          
           <b-tabs>
             <b-tab title="Trends" v-if="selected_tab === 'trend'" > 
@@ -72,7 +72,7 @@
           </b-tabs>
         </b-col>
         <!-- tabs start -->
-        <b-col cols="4" sm="4" class="p-3 ">
+        <b-col cols="5" sm="4" class="p-3 ">
       <b-container fluid class="bv-example-row">
         <b-row>
           <b-col sm="9">
@@ -83,7 +83,7 @@
             </b-row>
             <b-row>
               <b-col cols="8" sm="6"><average/></b-col>
-              <b-col cols="4" sm="6"><firsttime/></b-col>
+              <!--<b-col cols="4" sm="6"><firsttime/></b-col> -->
             </b-row>
           </b-col>
         </b-row>
@@ -108,7 +108,7 @@ import resolved from "@/components/cards/resolved.vue";
 import received from "@/components/cards/received.vue";
 
 import average from "@/components/cards/averageTime.vue";
-import firsttime from "@/components/cards/firsttimeResponse.vue";
+//import firsttime from "@/components/cards/firsttimeResponse.vue"; 
 
 import tick from "@/components/tickets/ticket1.vue";
 
@@ -129,7 +129,7 @@ export default {
     lower,
 
     average,
-    firsttime,
+    //firsttime,
 
     tick
 
