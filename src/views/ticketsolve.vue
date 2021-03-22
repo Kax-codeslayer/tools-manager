@@ -4,23 +4,27 @@
 
 <div class="text-center">
     <div id="navi">
-  <b-navbar toggleable="sm"  class="nav2">
-    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-      
-       
+
+    
+      <b-card>
+     <b-row> 
+       <b-col cols="4">  
 <b-navbar-brand>
-   <b-icon star></b-icon>
+ 
+   <b-icon icon ="star"></b-icon>
        </b-navbar-brand>
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit"> <b-icon name="flag"></b-icon> Reply</b-button></b-navbar-brand>
-    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Add-Note</b-button></b-navbar-brand>
+    
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Forward</b-button></b-navbar-brand>
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Close</b-button></b-navbar-brand>
-    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Merge</b-button></b-navbar-brand>
-
-    <b-collapse id="nav-text-collapse" is-nav>
-      
-    </b-collapse>
-  </b-navbar>
+       </b-col>
+       <b-col>
+         </b-col>
+       <b-col cols="3">
+ <router-link to="/ticket" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
+    </b-col>
+     </b-row>
+      </b-card>
 </div>
 
     <b-row id="ket">
@@ -75,31 +79,7 @@
     RESOLUTION  DUE  <i>Edit</i>
    <p> <small> <b-icon icon="clock" animation="spin" font-scale="1" shift-v="6"></b-icon>  by 20 April 2020,10:00</small></p></div>
     <hr>
-  <b-form >
-    <label><small>Tags</small></label>
-    <b-form-input ></b-form-input>
-    
-    
-     <label for="input-with-list"><small>Type</small></label>
-    <b-form-input list="input-list" id="input-with-list1"></b-form-input>
-    <b-form-datalist id="input-list" :options="['Question', 'Insident', 'Problem','Refunts']"></b-form-datalist>
-
-     <label for="input-with-list"><small>Status</small></label>
-    <b-form-input list="input-list" id="input-with-list2"></b-form-input>
-    <b-form-datalist id="input-list" :options="['Open', 'Pending', 'Resolved','Closed' ,'Waiting on Customer']" ></b-form-datalist>
-
-     <label for="input-with-list"><small>Priority</small></label>
-    <b-form-input list="input-list" id="input-with-list3"></b-form-input>
-    <b-form-datalist id="input-list" :options="['Low', 'Medium', 'High','Urgent' ]"></b-form-datalist>
-
-     <label for="input-with-list"><small>Group</small></label>
-    <b-form-input list="input-list" id="input-with-list4"></b-form-input>
-    <b-form-datalist id="input-list" :options="['Finance', 'Sales', 'Support','Admin' ]"></b-form-datalist>
-
-     <label><small>Agent</small></label>
-    <b-form-input ></b-form-input>
-   </b-form>
-
+  
 
 
 
@@ -180,5 +160,9 @@ export default {
 }
 #na:hover{
    transform: scale(1.1);
+}
+#back{
+  margin-left: 98%;
+  margin-top: 2px;
 }
 </style>

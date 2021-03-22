@@ -1,10 +1,10 @@
 <template>
    <div id ="inner" >  
       <b-row class="mb-1 sidelink">
-        <b-col cols="12" sm="12" class="p-3 "><router-link to="/dashboard" class ="iterms"> <b-icon icon="card-checklist"></b-icon> Dashboard</router-link></b-col> 
+        <b-col cols="12" sm="12" class="p-3 "><router-link to="/home" class ="iterms"> <b-icon icon="card-checklist"></b-icon> Dashboard</router-link></b-col> 
       </b-row>
       <b-row class="mb-1 sidelink">
-        <b-col cols="12" sm="12" class="p-3 "><router-link to="/dashboard/ticket" class ="iterms"> <b-icon icon="journals"></b-icon>    Tickets</router-link></b-col> 
+        <b-col cols="12" sm="12" class="p-3 "><router-link to="/ticket" class ="iterms"> <b-icon icon="journals"></b-icon>    Tickets</router-link></b-col> 
       </b-row>
       <b-row class="mb-2 sidelink">
           <b-col>
@@ -20,9 +20,9 @@
               variant="none"
               right
             >
-              <b-dropdown-item> <router-link to="/dashboard/individualContacts" id="my-nav-dropdown" >Individuals</router-link></b-dropdown-item>
+              <b-dropdown-item> <router-link to="/individualContacts" id="my-nav-dropdown" >Individuals</router-link></b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item><router-link to="/dashboard/comContacts" id="my-nav-dropdown">Companies</router-link></b-dropdown-item>     
+              <b-dropdown-item><router-link to="/comContacts" id="my-nav-dropdown">Companies</router-link></b-dropdown-item>     
             </b-dropdown>
             </b-input-group>
           </b-col>      

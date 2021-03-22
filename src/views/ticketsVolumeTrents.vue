@@ -6,6 +6,7 @@
       
     >
       <b-card-text> 
+        <router-link to="/report" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
         <h3> Tickets Volume Trents</h3>
         <small>Last Updated 30 minutes ago</small>
 
@@ -25,7 +26,7 @@
 
 <b-row id="top">
     <b-col cols="">
-        <p>DAILY TRENTS OF TICKETS RECEIVED, RESOLVED AND UNRESOLVED</p>
+        <p>MONTHLY TRENTS OF TICKETS RECEIVED, RESOLVED AND UNRESOLVED</p>
     </b-col>
     <b-col cols="4">
 <div>
@@ -44,11 +45,11 @@
 
 <b-row>
 <b-col id="dat"> Total Received ticket<h5>77</h5></b-col>
-<b-col id="dat">  Total Resolved ticket<h5>77</h5></b-col>
-<b-col id="dat"> Total Unsooved ticket<h5>77</h5></b-col>
+<b-col id="dat">  Total Resolved ticket<h5>70</h5></b-col>
+<b-col id="dat"> Total Unsooved ticket<h5>07</h5></b-col>
 <b-col id="dat"> Average Received ticket<h5>77</h5></b-col>
-<b-col id="dat"> Average Resolved ticket<h5>77</h5></b-col>
-<b-col id="dat"> Average Unsolved ticket<h5>77</h5></b-col>
+<b-col id="dat"> Average Resolved ticket<h5>70</h5></b-col>
+<b-col id="dat"> Average Unsolved ticket<h5>07</h5></b-col>
 
 </b-row>
 <volume/>

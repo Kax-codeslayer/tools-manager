@@ -7,7 +7,8 @@
       
     >
       <b-card-text> 
-        <h3> Helpdesk in Depth</h3>
+        <router-link to="/report" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
+        <h3> Helpdesk in Depth  </h3>
         <small>Last Updated 30 minutes ago</small>
 
 

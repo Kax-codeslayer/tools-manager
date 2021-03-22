@@ -213,6 +213,7 @@ input[type=text], select {
 </style> -->
 <template>
     <div id="app">
+      <router-link to="/home" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
         <vue-bootstrap4-table :rows="rows" :columns="columns" :config="config">
         </vue-bootstrap4-table>
     </div>
@@ -225,54 +226,54 @@ export default {
     data: function() {
         return {
             rows: [{
-                    "id": 1,
-                    "name": {
-                        "first_name": "Vladimir",
-                        "last_name": "Nitzsche"
+                    "Name": "Christabel Chinyanganya",
+                    "contact": {
+                        "contact_name": "0778 552 441"
+                       
                     },
                     "address": {
-                        "country": "Mayotte"
+                        "country": "Harare Zimbabwe Budiriro"
                     },
-                    "email": "franecki.anastasia@gmail.com",
+                    "email": "kiki.chinya@gmail.com",
                 },
                 {
-                    "id": 2,
-                    "name": {
-                        "first_name": "Irwin",
-                        "last_name": "Bayer"
+                    "Name": "Milliet Mukonoweshuro",
+                    "contact": {
+                        "contact_name": "0774 345 336"
+                        
                     },
-                    "age": 23,
+                    
                     "address": {
-                        "country": "Guernsey"
+                        "country": "lokinva harare zim"
                     },
-                    "email": "rlittle@macejkovic.biz",
+                    "email": "mlittle@itrack.biz",
                 },
                 {
-                    "id": 3,
-                    "name": {
-                        "first_name": "Don",
-                        "last_name": "Herman"
+                    "Name": "Rumbi",
+                    "contact": {
+                        "contact_name": "0778 554 336",
+                        
                     },
                     "address": {
-                        "country": "Papua New Guinea"
+                        "country": "Harare Zim Kuwadzana "
                     },
-                    "email": "delia.becker@cormier.com",
+                    "email": "rumbi.mkumbuzi@itrack.com",
                 }],
             columns: [{
-                    label: "id",
-                    name: "id",
+                    label: "Name",
+                    name: "Name",
                     filter: {
                         type: "simple",
-                        placeholder: "id"
+                        placeholder: "Name"
                     },
                     sort: true,
                 },
                 {
-                    label: "First Name",
-                    name: "name.first_name",
+                    label: "Contact",
+                    name: "contact.contact_name",
                     filter: {
                         type: "simple",
-                        placeholder: "Enter first name"
+                        placeholder: "Enter Contact"
                     },
                     sort: true,
                 },
@@ -282,11 +283,11 @@ export default {
                     sort: true,
                 },
                 {
-                    label: "Country",
+                    label: "Address",
                     name: "address.country",
                     filter: {
                         type: "simple",
-                        placeholder: "Enter country"
+                        placeholder: "Enter address"
                     },
                 }],
             config: {
@@ -301,3 +302,15 @@ export default {
     }
 }
 </script>
+
+<style>
+#app{
+  margin-top: 10px;
+}
+#back{
+  margin-left: 98%;
+  margin-top: 2px;
+}
+
+</style>
+

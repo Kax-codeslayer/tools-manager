@@ -5,8 +5,8 @@
     class="mb-2"
     id="rs"
   >
-<p>
-<small>First Response Time  </small></p> 
+
+<small>First Response Time  </small> 
 <h3>22min   </h3>
   </b-card>
 </template>

@@ -1,6 +1,8 @@
 <template>
 
   <div>
+       <router-link to="/home" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
+      
   
       <b-row>
           <b-col cols="8">
@@ -156,5 +158,10 @@ export default {
 
 #response:hover{
     transform: scale(1.1);
+}
+
+#back{
+  margin-left: 98%;
+  margin-top: 2px;
 }
 </style>
