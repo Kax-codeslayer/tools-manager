@@ -2,14 +2,15 @@
 
   <div id="app">
     <div class="login-page" v-if="is_logged_in === false">
-      <router-view @log_in= "logIn" />
+      <router-view v-on:log-in= "logIn" />
     </div>
     <div class="application" v-if="is_logged_in === true">
       <div id="nav" >
-       <supportnav @togle-sidebae="togleSidebar"/>
+        <!-- if it does not work put back the parentesis on togleSideBar() -->
+       <supportnav v-on:togle-sidebar="togleSidebar"/>
     </div>
       <b-row>
-      <b-col  cols="1.7" v-if="this.sidebar_shown=true">
+      <b-col  cols="1.7" v-if="this.sidebar_shown==true">
         <div class="sidebar">
           <supportside /> 
         </div>
@@ -39,7 +40,7 @@ export default {
   },
   data(){
     return{
-      is_logged_in:true,
+      is_logged_in:false,
       sidebar_shown:true
     }
   },
