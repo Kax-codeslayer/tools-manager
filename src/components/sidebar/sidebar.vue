@@ -58,7 +58,7 @@ a{
 }
 a:hover{
   text-decoration: unset;
-  color: #3432b6;
+  color: rgb(165, 162, 162);
 }
 #my-nav-dropdown__BV_toggle_{
   color:#ffff  !important;
