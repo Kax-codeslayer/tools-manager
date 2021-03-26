@@ -30,7 +30,7 @@
       <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content id="llog">
-            <em variant="light">  <b-icon-plus></b-icon-plus> New</em>
+            <em variant="light">  <b-icon-plus></b-icon-plus> </em>
           </template>
           
     <b-dropdown-item-button id="dropdown-left" v-b-toggle.sidebar-right >New Ticket</b-dropdown-item-button>
