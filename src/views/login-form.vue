@@ -26,7 +26,7 @@
                 name="checkbox-1"
                 value="accepted"
                 >
-      rember me
+      remember me
     </b-form-checkbox>
     </div>
         <router-link to="/home" class ="iterms"><b-button v-on:click="islogedIn()" class="searchBtn" variant="primary">login</b-button></router-link>
