@@ -12,7 +12,12 @@
       <b-row>
       <b-col  cols="1.7" v-if="this.sidebar_shown==true">
         <div class="sidebar">
-          <supportside /> 
+          <supportside/> 
+        </div>
+    </b-col>
+    <b-col  cols="1.7" v-if="this.sidebar_shown==false">
+        <div class="sidebar">
+          <minisiderbar/> 
         </div>
     </b-col>
      <b-col >
@@ -28,6 +33,7 @@
 <script>
 import supportnav from "@/components/naavi.vue";
 import supportside from "@/components/sidebar/sidebar.vue";
+import minisiderbar from "@/components/sidebar/mini-sidebar.vue";
 
 
 
@@ -35,7 +41,8 @@ export default {
   name: "App",
   components: {
     supportnav, 
-   supportside
+   supportside,
+   minisiderbar
       
   },
   data(){
