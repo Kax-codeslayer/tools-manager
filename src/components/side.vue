@@ -36,7 +36,7 @@
               <trent/>
             </b-tab>
             <b-tab  title="Unsolved" v-else-if="selected_tab === 'unsolved'" active>
-               <tick status="Unsolved" />
+               <tick status="Unsolved" name="Sande Kakomo" />
                <tick status="Unsolved" />
                <tick status="Unsolved" />
             </b-tab>

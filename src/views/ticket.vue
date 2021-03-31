@@ -37,9 +37,11 @@
 </b-card>
 <b-row>
   <b-col cols="9" id="ticketing">
-    <tick/>
-    <tick/>
-    <tick/>
+    <ul>
+      <li v-for="ticket in data" :key="ticket.id">
+         <tick :name="ticket.name"/> 
+      </li>
+    </ul>
   </b-col>
   <b-col>
     
@@ -57,9 +59,23 @@ export default {
     name:"ticket",
     components:{
         tick,
-       
         tfilter
+    },
+    data(){
+      return{
+        data:[], 
+      }
+    },
+     beforeMount(){
+    this.getName();
+  },
+  methods: {
+    async getName(){
+      const res = await fetch('http://itrackdevs.geo-fuel.com/tools_manager_api/getAllmail.php');
+      const data = await res.json();
+      this.data = data;
     }
+  }
 }
 </script>
 <style >
