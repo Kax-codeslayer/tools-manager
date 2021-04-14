@@ -14,22 +14,34 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto ">
+
+        
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2"  ></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          <b-form-input size="sm" class="mr-sm-2" placeholder="Seach" > Search</b-form-input>
+          
+        <b-icon icon="search" variant="light"></b-icon>
+      
         </b-nav-form>
         
-<b-dropdown  text="New" variant="light" class="m-2">
+
+  
+     
+
+      <b-nav-item-dropdown right>
+          <!-- Using 'button-content' slot -->
+          <template #button-content id="llog">
+            <em variant="light">  <b-icon-plus></b-icon-plus> </em>
+          </template>
+          
     <b-dropdown-item-button id="dropdown-left" v-b-toggle.sidebar-right >New Ticket</b-dropdown-item-button>
     <b-dropdown-item-button id="dropdown-left" v-b-toggle.bar1-right >New Contact</b-dropdown-item-button>
     <b-dropdown-item-button id="dropdown-left" v-b-toggle.company-right> New Company</b-dropdown-item-button>
-  </b-dropdown>
-     
+        </b-nav-item-dropdown>
 
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content id="llog">
-            <em variant="light">Kikie</em>
+            <em variant="light">    <b-icon-person-circle></b-icon-person-circle>Kikie</em>
           </template>
           <b-dropdown-item href="#">Setting</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>

@@ -2,7 +2,8 @@
 <div class="text-left">
     <b-card>
   <b-row>
-<b-col cols="2">
+<b-col cols="1">
+  <div>
     <b-form-checkbox
       id="checkbox-2"
       v-model="status"
@@ -11,6 +12,7 @@
       unchecked-value="not_accepted"
     >
        </b-form-checkbox>
+       </div>
 </b-col>  
  <b-col cols="10">
     <b-dropdown id="dropdown-1" text="Assign" class="m-md-2" variant="outline-success">

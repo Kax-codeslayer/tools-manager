@@ -13,10 +13,10 @@
  
    <b-icon icon ="star"></b-icon>
        </b-navbar-brand>
-    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit"> <b-icon name="flag"></b-icon> Reply</b-button></b-navbar-brand>
+    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit" id="show-btn" @click="showModal">  Reply</b-button></b-navbar-brand>
     
     <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Forward</b-button></b-navbar-brand>
-    <b-navbar-brand><b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Close</b-button></b-navbar-brand>
+    
        </b-col>
        <b-col>
          </b-col>
@@ -25,6 +25,28 @@
     </b-col>
      </b-row>
       </b-card>
+
+
+      <b-modal ref="my-modal" hide-footer title="Reply">
+      <div class="d-block text-center">
+        <div>
+  <b-form-textarea
+    id="textarea-no-resize"
+    placeholder="Enter Text"
+    rows="3"
+    no-resize
+  ></b-form-textarea>
+ 
+</div>
+<b-row id="butto">
+  <b-col cols="2">
+ <b-button variant="outline-success">Send</b-button>
+ </b-col>
+ <b-col></b-col>
+ </b-row>
+      </div>
+      
+    </b-modal>
 </div>
 
     <b-row id="ket">
@@ -127,7 +149,21 @@ export default {
       options: ['Apple', 'Banana', 'Grape', 'Kiwi', 'Orange'],
       option: ['Open', 'Closed', 'Pending', 'Resolved', 'Waiting on Customer']
     }
-  }
+  },
+
+  methods: {
+      showModal() {
+        this.$refs['my-modal'].show()
+      },
+      hideModal() {
+        this.$refs['my-modal'].hide()
+      },
+      toggleModal() {
+        // We pass the ID of the button that we want to return focus to
+        // when the modal has hidden
+        this.$refs['my-modal'].toggle('#toggle-btn')
+      }
+    }
 }
 </script>
 <style>
@@ -135,6 +171,9 @@ export default {
   background: white;
   margin-right: 2px;
   text-align: left;
+}
+#butto{
+  margin-top: 5px;
 }
 
 #res{
