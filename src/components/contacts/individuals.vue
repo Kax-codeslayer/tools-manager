@@ -1,106 +1,90 @@
 
-<!--<template>
 
 
-  <div>
-
-    <div class="text-center">
-    
-    
-</div>
-  <b-table-simple hover small caption-top responsive>
-    
-    <colgroup><col><col></colgroup>
-    <colgroup><col><col><col></colgroup>
-    <colgroup><col><col></colgroup>
-    
-    
-      <b-tr>
-        <b-th>First Name</b-th>
-        <b-th>Last Name</b-th>
-        <b-th>Address</b-th>
-        <b-th>Contact</b-th>
-        <b-th>Email</b-th>
-        
-      </b-tr>
-    
-    <b-tbody>
-      <b-tr>
-          
-        <b-td rowspan="">  
-            
-    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-    >
-    </b-form-checkbox>Christa</b-td>
-        
-        <b-td>H</b-td>
-        <b-td>Harare</b-td>
-        <b-td>70000</b-td>
-        <b-td >kiki@gmail</b-td>
-       <b-td><b-icon-pencil-square variant="success" v-b-popover.hover="'Edit'" title="Popover Title"></b-icon-pencil-square><b-icon-trash-fill variant="danger" v-b-popover.hover="'Delete'" title="Popover Title"></b-icon-trash-fill></b-td>
-        
-      </b-tr>
-
-      
-      <b-tr>
-          
-        <b-td rowspan="">  
-            
-    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-    >
-    </b-form-checkbox>Elvin</b-td>
-        
-        <b-td>Harare</b-td>
-        <b-td>0784315526</b-td>
-        <b-td>kiki@gmail</b-td>
-        <b-td>72</b-td>
-        <b-td><b-icon-pencil-square variant="success" v-b-popover.hover="'Edit'" title="Popover Title"></b-icon-pencil-square><b-icon-trash-fill variant="danger" v-b-popover.hover="'Delete'" title="Popover Title"></b-icon-trash-fill></b-td>
-        
-      </b-tr>
-      
-      <b-tr>
-          
-        <b-td rowspan="">  
-            
-    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-    >
-    </b-form-checkbox>Kiki</b-td>
-        
-        <b-td>Harare</b-td>
-        <b-td>0784315526</b-td>
-        <b-td>kiki@gmail</b-td>
-        <b-td>kiki@gmail</b-td>
-        <b-td><b-icon-pencil-square variant="success" v-b-popover.hover="'Edit'" title="Popover Title"></b-icon-pencil-square><b-icon-trash-fill variant="danger" v-b-popover.hover="'Delete'" title="Popover Title"></b-icon-trash-fill></b-td>
-        
-      </b-tr>
-    </b-tbody>
-   
-  </b-table-simple>
-</div> 
-
-
-    
-</template>
 <template>
 
   <div id="tabb">
+<b-row >
+  <b-col cols="2">
+    <input type="text" id="srch" placeholder="Search " v-model="filter" />
+    </b-col>
+    <b-col cols="1" id="not" >
+      <div>
+     <b-button variant="outline-success" size="lg" id="show-btn" @click="showModal">Add</b-button>
 
-    <input type="text" placeholder="Search by  or employee" v-model="filter" />
+     <b-modal ref="my-modal" hide-footer title=" Add contact">
+      <div class="d-block text-center">
+       
+       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+
+          <b-form-group id="input-group-2" label="First Name:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.first_name"
+          placeholder="Enter name"
+          required
+        ></b-form-input>
+      </b-form-group>
+      
+
+       <b-form-group id="input-group-2" label="Last Name:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.last_name"
+          placeholder="Enter name"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+       <b-form-group id="input-group-2" label="Address:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.address"
+          placeholder="Enter name"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+       <b-form-group id="input-group-2" label="Contact:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.contact"
+          placeholder="Enter name"
+          required
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group
+        id="input-group-1"
+        label="Email address:"
+        label-for="input-1"
+        description="We'll never share your email with anyone else."
+      >
+        <b-form-input
+          id="input-1"
+          v-model="form.email"
+          type="email"
+          placeholder="Enter email"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+     
+
+     
+
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
+   
+
+      </div>
+      
+     
+    </b-modal>
+
+     </div>
+    </b-col>
+    </b-row>
   <table>
     <thead>
       <tr>
@@ -113,11 +97,11 @@
     </thead>
     <tbody>
       <tr v-for="(row, index) in filteredRows" :key="`employee-${index}`">
-        <td v-html="highlightMatches(row.firstname)"></td>
-        <td v-html="highlightMatches([...row.lastname].sort().join(', '))"></td>
          <td v-html="highlightMatches(row.firstname)"></td>
         <td v-html="highlightMatches([...row.lastname].sort().join(', '))"></td>
-        <td v-html="highlightMatches(row.firstname)"></td>
+         <td v-html="highlightMatches(row.address)"></td>
+        <td v-html="highlightMatches([...row.contact].sort().join(', '))"></td>
+        <td v-html="highlightMatches(row.email)"></td>
          
       </tr>
       
@@ -133,27 +117,24 @@
   data (){ return{
     filter: "",
     rows: [
-      { firstname: "Christabel", lastname: ["Chings"] },
-      {
-        firstname: "Elvishto",
-        lastname: ["Juarez"],
-        
-      },
-      {
-        firstname: "ALVIN",
-       lastname: ["Sweeney"]
-      },
-      {
-       firstname: "Munhu",
-        lastname: ["Lambert"]
-      },
-      {
-        firstname: "mimie",
-        lastname: ["Prince"]
+      { firstname: "Christabel", lastname: "Chings", address:"harare",contact:"O773 55476", email: "Ch@gmail.com",},
+     
+    ],
+
+    form: {
+          first_name: '',
+           last_name: '',
+            address: '',
+             contact: '',
+              email: '',
+         
+          
+        },
+        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        show: true
       }
-    ]
-  }
   },
+  
   methods: {
     highlightMatches(text) {
       const matchExists = text
@@ -163,18 +144,27 @@
 
       const re = new RegExp(this.filter, "ig");
       return text.replace(re, matchedText => `<strong>${matchedText}</strong>`);
-    }
+    },
+
+     showModal() {
+        this.$refs['my-modal'].show()
+      },
+      hideModal() {
+        this.$refs['my-modal'].hide()
+      },
   },
+  
   computed: {
     filteredRows() {
       return this.rows.filter(row => {
         const lastname = row.lastname.toString().toLowerCase();
         const firstname = row.firstname.toLowerCase();
+         const address = row.address.toLowerCase();
         
         const searchTerm = this.filter.toLowerCase();
 
         return (
-          firstname.includes(searchTerm) || lastname.includes(searchTerm)
+          firstname.includes(searchTerm) || lastname.includes(searchTerm)|| address.includes(searchTerm)
         );
       });
     }
@@ -183,7 +173,7 @@
 
 </script>
 
-<style>
+<style scoped>
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -210,98 +200,17 @@ input[type=text], select {
   box-sizing: border-box;
   margin-top: 25px;
 }
-</style> -->
-<template>
-    <div id="app">
-      <router-link to="/home" class ="iterms"> <b-icon icon="x-circle" scale="1.5" variant="danger" id="back" v-b-popover.hover="'Exit'"></b-icon></router-link>
-        <vue-bootstrap4-table :rows="rows" :columns="columns" :config="config">
-        </vue-bootstrap4-table>
-    </div>
-</template>
-<script>
-import VueBootstrap4Table from 'vue-bootstrap4-table'
-
-export default {
-    name: 'App',
-    data: function() {
-        return {
-            rows: [{
-                    "Name": "Christabel Chinyanganya",
-                    "contact": {
-                        "contact_name": "0778 552 441"
-                       
-                    },
-                    "address": {
-                        "country": "Harare Zimbabwe Budiriro"
-                    },
-                    "email": "kiki.chinya@gmail.com",
-                },
-                {
-                    "Name": "Milliet Mukonoweshuro",
-                    "contact": {
-                        "contact_name": "0774 345 336"
-                        
-                    },
-                    
-                    "address": {
-                        "country": "lokinva harare zim"
-                    },
-                    "email": "mlittle@itrack.biz",
-                },
-                {
-                    "Name": "Rumbi",
-                    "contact": {
-                        "contact_name": "0778 554 336",
-                        
-                    },
-                    "address": {
-                        "country": "Harare Zim Kuwadzana "
-                    },
-                    "email": "rumbi.mkumbuzi@itrack.com",
-                }],
-            columns: [{
-                    label: "Name",
-                    name: "Name",
-                    filter: {
-                        type: "simple",
-                        placeholder: "Name"
-                    },
-                    sort: true,
-                },
-                {
-                    label: "Contact",
-                    name: "contact.contact_name",
-                    filter: {
-                        type: "simple",
-                        placeholder: "Enter Contact"
-                    },
-                    sort: true,
-                },
-                {
-                    label: "Email",
-                    name: "email",
-                    sort: true,
-                },
-                {
-                    label: "Address",
-                    name: "address.country",
-                    filter: {
-                        type: "simple",
-                        placeholder: "Enter address"
-                    },
-                }],
-            config: {
-                checkbox_rows: true,
-                rows_selectable: true,
-                card_title: "Individual Contacts"
-            }
-        }
-    },
-    components: {
-        VueBootstrap4Table
-    }
+#srch{
+  width: 180px;
 }
-</script>
+#not{
+  margin-top: 25px;
+}
+</style> -->
+
+
+
+
 
 <style>
 #app{
