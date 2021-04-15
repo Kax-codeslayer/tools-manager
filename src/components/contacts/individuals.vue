@@ -15,58 +15,46 @@
      <b-modal ref="my-modal" hide-footer title=" Add contact">
       <div class="d-block text-center">
        
-       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+       <b-form @submit="tesr" @reset="onReset" v-if="show">
 
-          <b-form-group id="input-group-2" label="First Name:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="form.first_name"
-          placeholder="Enter name"
-          required
-        ></b-form-input>
-      </b-form-group>
+         
       
 
-       <b-form-group id="input-group-2" label="Last Name:" label-for="input-2">
+       <b-form-group id="input-group-3" label="name:" label-for="input-2">
         <b-form-input
-          id="input-2"
-          v-model="form.last_name"
+          id="input-3"
+          v-model="name"
           placeholder="Enter name"
           required
         ></b-form-input>
       </b-form-group>
 
-       <b-form-group id="input-group-2" label="Address:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="form.address"
-          placeholder="Enter name"
-          required
-        ></b-form-input>
-      </b-form-group>
-
-       <b-form-group id="input-group-2" label="Contact:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="form.contact"
-          placeholder="Enter name"
-          required
-        ></b-form-input>
-      </b-form-group>
-      <b-form-group
+        <b-form-group
         id="input-group-1"
-        label="Email address:"
+        label="Email:"
         label-for="input-1"
         description="We'll never share your email with anyone else."
       >
         <b-form-input
           id="input-1"
-          v-model="form.email"
+          v-model="email"
           type="email"
           placeholder="Enter email"
           required
         ></b-form-input>
       </b-form-group>
+
+       <b-form-group id="input-group-2" label="massage:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="massage"
+          placeholder="massage"
+          required
+        ></b-form-input>
+      </b-form-group>
+      
+
+    
 
      
 
@@ -85,6 +73,7 @@
      </div>
     </b-col>
     </b-row>
+      <b-button  variant="primary" v-on:click="tesr">Submit</b-button>
   <table>
     <thead>
       <tr>
@@ -97,11 +86,11 @@
     </thead>
     <tbody>
       <tr v-for="(row, index) in filteredRows" :key="`employee-${index}`">
-         <td v-html="highlightMatches(row.firstname)"></td>
-        <td v-html="highlightMatches([...row.lastname].sort().join(', '))"></td>
-         <td v-html="highlightMatches(row.address)"></td>
-        <td v-html="highlightMatches([...row.contact].sort().join(', '))"></td>
-        <td v-html="highlightMatches(row.email)"></td>
+         <td v-html="highlightMatches(row.id)"></td>
+        <td v-html="highlightMatches([...row.name].sort().join(', '))"></td>
+         <td v-html="highlightMatches(row.email)"></td>
+        <td v-html="highlightMatches([...row.massage].sort().join(', '))"></td>
+        <td v-html="highlightMatches(row.date)"></td>
          
       </tr>
       
@@ -112,30 +101,80 @@
 </div>
 </template>
 <script>
+import axios from 'axios';
    export default{
   
   data (){ return{
     filter: "",
     rows: [
-      { firstname: "Christabel", lastname: "Chings", address:"harare",contact:"O773 55476", email: "Ch@gmail.com",},
-     
+      { firstname: "Christabel",
+       lastname: "Chings",
+        address:"harare",
+        contact:"O773 55476", 
+        email: "Ch@gmail.com",},
     ],
 
-    form: {
-          first_name: '',
-           last_name: '',
-            address: '',
-             contact: '',
-              email: '',
-         
-          
+    data: {
+       
         },
+          name: '',
+           email: '',
+            massage: '',
         foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
         show: true
       }
   },
-  
+  beforeMount(){
+    this.getName();
+  },
   methods: {
+    async getName(){
+      const res = await fetch('http://itrackdevs.geo-fuel.com/tools_manager_api/getAllmail.php');
+      const data = await res.json();
+      this.data = data;
+    },
+
+    tesr()
+    {
+      console.log("meeee"),
+      console.log(this.name),
+      console.log(this.massage),
+       console.log(this.email)
+    },
+
+    createContact (){
+        console.log("Create contact!")
+
+        let formData = new FormData();
+        console.log("name:", this.data.name,
+                 "massage:", this.data.massage,
+                  "email:", this.data.email,                 )
+        formData.append('name', this.data.name,
+                    'massage', this.data.massage,
+                  'email', this.data.email
+        
+        )
+        
+           
+        var contact = {};
+        formData.forEach(function(value, key){
+            contact[key] = value;
+        });
+
+        axios({
+            method: 'post',
+            url: 'http://itrackdevs.geo-fuel.com/tools_manager_api/toolsapi.php',
+            data: formData,
+            config: { headers: {'Content-Type': 'multipart/form-data' }}
+        })
+       
+        .catch(function (response) {
+            //handle error
+            console.log(response)
+            
+        });
+    },
+
     highlightMatches(text) {
       const matchExists = text
         .toLowerCase()
@@ -156,15 +195,15 @@
   
   computed: {
     filteredRows() {
-      return this.rows.filter(row => {
-        const lastname = row.lastname.toString().toLowerCase();
-        const firstname = row.firstname.toLowerCase();
-         const address = row.address.toLowerCase();
+      return this.data.filter(row => {
+        const id = row.id.toString().toLowerCase();
+        const name = row.name.toLowerCase();
+         const massage = row.massage.toLowerCase();
         
         const searchTerm = this.filter.toLowerCase();
 
         return (
-          firstname.includes(searchTerm) || lastname.includes(searchTerm)|| address.includes(searchTerm)
+          id.includes(searchTerm) || name.includes(searchTerm)|| massage.includes(searchTerm)
         );
       });
     }
